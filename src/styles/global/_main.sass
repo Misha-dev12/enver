@@ -1,0 +1,68 @@
+*,
+*::after,
+*::before
+    margin: 0
+    padding: 0
+    box-sizing: inherit
+
+body
+    box-sizing: border-box // Moved it here and added inherit on the * selector
+    background: var(--bg-section-tender)
+
+::-webkit-scrollbar
+    width: 0.75rem
+    height: 0.5rem
+
+::-webkit-scrollbar-track
+    background: var(--background-scrollbar-track)
+
+::-webkit-scrollbar-thumb
+    background: var(--background-scrollbar-thumb)
+    border-radius: 0.75rem
+
+.pages-nav
+    position: fixed
+    z-index: 500
+    right: 0
+    top: 300px
+    background: #00e2ff
+    padding: 0.5rem
+    overflow: hidden
+    display: none
+    h4
+        color: #000
+        text-align: center
+    ol
+        display: none
+        // list-style: none
+        padding-left: 1.5rem
+        li a
+            display: block
+            padding: 0.2rem 0.2rem
+            color: #000
+            font-size: 1.2rem
+            white-space: nowrap
+    &:hover
+        ol
+            display: block
+.container
+    width: 100%
+    max-width: 1522px
+    margin: 0 auto
+    padding: 0 1rem
+
+    &.xl
+      max-width: 114rem
+
+    @include respond-to(big-desk)
+      max-width: 992px
+
+a
+    text-decoration: none
+
+li
+    list-style: none
+
+input
+    border: 0
+    outline: none

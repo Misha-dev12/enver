@@ -1,0 +1,103 @@
+.btn-primary, .btn-secondary, .btn-transparent
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  box-sizing: border-box
+  user-select: none
+  font-style: normal
+  font-weight: 600
+  font-size: 0.938rem
+  text-transform: uppercase
+  border: 2px solid
+  padding: 1.25rem 2rem
+  transition: .25s
+  border-color: var(--cyan)
+  cursor: pointer
+  width: fit-content
+  text-align: center
+
+  &.lg
+    font-size: 1rem
+    font-weight: 600
+    padding: 1.375rem 2.25rem
+    letter-spacing: 0.2rem
+    @include respond-to(big-desk)
+      font-size: 0.875rem
+      padding: 1rem 1.5rem
+  
+  @include respond-to(big-desk)
+    font-size: 0.75rem
+    padding: 0.75rem 1rem
+
+.btn-primary
+    color: var(--cyan)
+    background-color: transparent
+    border-radius: var(--border-radius-s)
+    &:hover
+        background-color: var(--cyan)
+        color: var(--blue-dark)
+
+.btn-secondary
+    color: var(--blue-dark)
+    background-color: var(--cyan)
+    border-radius: var(--border-radius-xs)
+    &:hover
+        background-color: transparent
+        color: var(--cyan)
+
+.btn-transparent
+  letter-spacing: 0.2em
+  text-transform: uppercase
+  border: none
+  color: var(--cyan)
+  padding: 0
+  position: relative
+  transition: 0.2s
+  &::before
+    content: ""
+    position: absolute
+    opacity: 0
+    bottom: 0
+    left: 0
+    transition: 0.3s
+    width: 0
+    height: 0.125rem
+    background: var(--cyan)
+  &:hover
+    color: var(--white)
+    &::before
+      opacity: 1
+      width: 100%
+    
+
+.btn-transparent-border
+  border: 1px solid
+  border-radius: var(--border-radius-xs)
+  color: var(--white)
+  background-color: transparent
+  &:hover
+    background-color: var(--cyan)
+    color: var(--blue-dark)
+
+.sign__in
+    font-weight: 600
+    font-size: 0.938rem
+    line-height: 1.5rem
+    letter-spacing: 0.2em
+    text-transform: uppercase
+    color: var(--white)
+    transition: 0.25s
+    &:hover
+        color: var(--cyan)
+
+.sign__up
+    padding: 0.844rem 1.8rem
+    font-size: 0.75rem
+.add-to-email
+    padding: 0.844rem 1.8rem
+    font-size: 0.75rem
+
+button
+    border: 0
+    outline: none
+    background-color: transparent

@@ -1,0 +1,189 @@
+.contact-us__section
+  padding: 11.2rem 0 6rem
+  position: relative
+  z-index: 1
+  min-height: calc(100vh - 37rem)
+  @include respond-to(tab-port)
+    padding: 7rem 0 4rem
+  @include respond-to(tab-port-small)
+    padding: 5rem 0 4rem
+
+.contact-us__inner
+  display: flex
+  gap: 12rem
+  @include respond-to(big-desk)
+    gap: 4rem
+  @include respond-to(tab-port)
+    gap: 2rem
+  @include respond-to(tab-port-small)
+    flex-direction: column
+
+.contact-us__text
+  display: flex
+  flex-direction: column
+  text-align: left
+  padding: 2rem 0
+  
+  h1
+    text-align: left
+    font-size: 3.5rem
+    font-weight: 700
+    color: var(--white)
+    text-transform: uppercase
+    margin-bottom: 2.6rem
+    line-height: 1.5
+
+  p
+    font-size: 1rem
+    font-weight: 400
+    color: var(--white)
+    line-height: 1.7
+    margin-bottom: 2.25rem
+
+  ul
+    padding-left: 0
+    margin-bottom: 0
+    li
+      padding-left: 1.25rem
+      position: relative
+      font-size: 1rem
+      font-weight: 400
+      color: var(--white)
+      line-height: 1.8
+      margin-bottom: 1rem
+      letter-spacing: 0.1rem
+      &::before
+        content: ""
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 0.5rem
+        height: 0.5rem
+        border-radius: 50%
+        background-color: var(--cyan)
+
+  @include respond-to(big-desk)
+    h1
+      font-size: 3rem
+  @include respond-to(tab-port)
+    h1
+      font-size: 2rem
+      margin-bottom: 2rem
+
+.contact-us__form
+  background: var(--bg-section-products)
+  border-radius: 0.5rem
+  padding: 3.5rem
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  width: 36.375rem
+  min-width: 36.375rem
+  
+  @include respond-to(big-desk)
+    padding: 2.5rem
+    min-width: auto
+    width: 100%
+  @include respond-to(tab-port)
+    padding: 2rem 1rem
+
+.recapcha
+  width: 100%
+  img
+    width: 100%
+    object-fit: contain
+
+.form__top
+  display: flex
+  flex-direction: column
+  gap: 0.75rem
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea
+  width: 100%
+  border: 1px solid var(--border-input)
+  border-radius: 0.25rem
+  padding: 1.4rem 1.25rem
+  color: var(--white)
+  font-size: 0.75rem
+  font-weight: 400
+  background-color: transparent
+  &::placeholder
+    color: var(--gray)
+
+textarea
+  resize: none
+  height: 11.25rem
+  outline: none
+
+.textarea
+  position: relative
+  &:after 
+    position: absolute
+    content: ""
+    top: 1.5rem
+    right: 1.5rem
+    width: 0.4rem
+    height: 0.4rem
+    transition: 0.2s
+    transform: rotate(45deg)
+    border-right: 1px solid var(--white)
+    border-bottom: 1px solid var(--white)
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button 
+  -webkit-appearance: none
+  margin: 0
+
+input[type=number] 
+  -moz-appearance: textfield
+
+input[type="submit"]
+  width: 100%
+
+.checkbox
+  display: flex
+  position: relative
+  padding-left: 2.5rem
+  p
+    color: var(--white)
+    font-size: 0.75rem
+    font-weight: 400
+    line-height: 1.5
+    opacity: 0.6
+  input
+    position: absolute
+    z-index: -1
+    opacity: 0
+  .checkbox__indicator
+    cursor: pointer
+    position: absolute
+    left: 0
+    top: 0.25rem
+    width: 1.5rem
+    height: 1.5rem
+    border: 2px solid var(--white)
+    transition: 0.2s
+    border-radius: 0.25rem
+    opacity: 0.2
+    &:hover
+      opacity: 1
+    &::before
+      content: ""
+      position: absolute
+      top: 40%
+      left: 50%
+      width: 0.4rem
+      height: 0.6rem
+      transform: translate(-50%, -50%) rotate(45deg)
+      transition: 0.2s
+      border-right: 2px solid var(--white)
+      border-bottom: 2px solid var(--white)
+      opacity: 0
+  input:checked ~ .checkbox__indicator
+    opacity: 1
+    &::before
+      opacity: 1

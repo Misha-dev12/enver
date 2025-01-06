@@ -1,0 +1,84 @@
+@@include('./components/head.html')
+
+<body>
+  <div class="screen-container">
+    @@include('./components/header.html')
+
+    <div class="screen-content">
+
+      <section class="contact-us__section">
+        <div class="bg__image bg-sec">
+          <img src="img/contact-us-bg.jpg" alt="alt">
+        </div>
+        <div class="container">
+          <div class="contact-us__inner">
+            <div class="contact-us__text">
+              <h1>
+                GET IN TOUCH
+              </h1>
+              <p>
+                We always love speaking to customers, potential customers, business analysts, and digital freight enthusiasts.
+              </p>
+              <p>
+                To save you some time, check out if any of the links below may help before reaching out to us.
+              </p>
+              <ul>
+                <li>
+                  I’m looking for a freight quote
+                </li>
+                <li>
+                  I need help with an existing shipment
+                </li>
+                <li>
+                  Freightos.com Help Center
+                </li>
+                <li>
+                  I want to work at Freightos
+                </li>
+              </ul>
+            </div>
+
+            <form class="contact-us__form">
+              <div class="form__top">
+                <input placeholder="Full Name" type="text">
+                <input placeholder="Email" type="email">
+                <input placeholder="Phone Number" type="number">
+                <input placeholder="Company" type="text">
+                <div class="custom-select">
+                  <select>
+                    <option>This is about...</option>
+                    <option>you</option>
+                    <option>me</option>
+                    <option>you and me</option>
+                  </select>
+                </div>
+                <div class="textarea">
+                  <textarea placeholder="Your message"></textarea>
+                </div>
+              </div>
+              
+              <div class="recapcha">
+                <img src="img/recapcha.png" alt="alt">
+              </div>
+              <label class="checkbox">
+                <p>
+                  I consent for Freightos to maintain this information to handle my contact request and to inform me about industry
+                  updates.
+                </p>
+                <input type="checkbox" />
+                <div class="checkbox__indicator"></div>
+              </label>
+
+              <input type="submit" value="submit" class="btn-secondary lg" />
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    @@include('./components/footer.html')
+  </div>
+</body>
+
+</html>
