@@ -1,0 +1,383 @@
+// section__intro///////////////////////////////////////////////////
+.section__intro {
+	padding: 75px 0;
+	@include respond-to(tab-port-small) {
+		padding: 40px 0;
+	}
+}
+.intro__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include respond-to(tab-port) {
+		flex-direction: column;
+		gap: 30px;
+	}
+}
+.intro__left {
+	max-width: 580px;
+	width: 100%;
+	h1 {
+		margin-bottom: 24px;
+	}
+	p {
+		margin-bottom: 50px;
+	}
+	.btn-primary {
+		img {
+			margin-left: 5px;
+		}
+	}
+}
+.intro__right {
+	max-width: 590px;
+	width: 100%;
+}
+
+// section__why///////////////////////////////////////////////////
+.section__why {
+	padding: 75px 0;
+	@include respond-to(tab-port-small) {
+		padding: 40px 0;
+	}
+}
+.why__top {
+	display: flex;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 50px;
+	@include respond-to(tab-port) {
+		flex-direction: column;
+	}
+	h2 {
+		@media only screen and (max-width: 965px) {
+			font-size: 50px;
+		}
+		@include respond-to(phone) {
+			font-size: 45px;
+		}
+		@include respond-to(phone-small) {
+			font-size: 36px;
+		}
+	}
+}
+.video-container {
+	position: relative;
+	width: 100%;
+}
+.video {
+	width: 100%;
+}
+.play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: var(--blue);
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 124px;
+	height: 124px;
+	font-size: 35px;
+	cursor: pointer;
+	display: none;
+	transition: 0.3s;
+	align-items: center;
+	justify-content: center;
+	@include respond-to(tab-port) {
+		width: 80px;
+		height: 80px;
+		font-size: 25px;
+	}
+	@include respond-to(phone) {
+		width: 50px;
+		height: 50px;
+		font-size: 16px;
+	}
+}
+/* Кнопка play відображається, коли відео не запущене */
+.video-container.paused .play-btn {
+	display: flex;
+}
+/* Показувати кнопку закриття тільки при наведенні на контейнер */
+.video-container.playing:hover .close-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* Показувати кнопки при наведенні на контейнер відео */
+.video-container:hover .play-btn {
+	display: flex;
+}
+/* Загальний ефект наведення для кнопок */
+.play-btn:hover,
+.close-btn:hover {
+	background: rgba(0, 0, 0, 0.8);
+}
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+// section__service///////////////////////////////////////////////////
+.section__service {
+	padding: 75px 0 50px;
+	@include respond-to(tab-port-small) {
+		padding-top: 50px;
+	}
+}
+.service__title {
+	margin-bottom: 100px;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	@include respond-to(tab-port-small) {
+		margin-bottom: 65px;
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+	}
+	&::before {
+		background-image: url('../img/icon/triangle.png');
+		width: 100px;
+		height: 100px;
+		left: 35px;
+		top: -35px;
+		@media only screen and (max-width: 1040px) {
+			left: 0;
+		}
+		@media only screen and (max-width: 970px) {
+			top: -110px;
+		}
+		@include respond-to(tab-port-small) {
+			background-size: 65px;
+			top: -65px;
+		}
+	}
+	&::after {
+		background-image: url('../img/icon/plus.png');
+		width: 42px;
+		height: 42px;
+		right: 0;
+		bottom: -20px;
+		transform: rotate(55deg);
+	}
+	h2 {
+		text-align: center;
+		max-width: 720px;
+	}
+}
+.service__list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 93px;
+	max-width: 1100px;
+	@include respond-to(tab-port-small) {
+		gap: 50px;
+	}
+}
+.service__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	text-align: center;
+}
+
+// section__portfolio///////////////////////////////////////////////////
+.section__portfolio {
+	padding: 125px 0 220px;
+	@include respond-to(tab-port) {
+		padding: 60px 0 100px;
+	}
+	h2 {
+		margin-bottom: 70px;
+		position: relative;
+		@include respond-to(tab-port-small) {
+			margin-bottom: 50px;
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			background-repeat: no-repeat;
+		}
+		&::before {
+			background-image: url('../img/icon/plus.png');
+			width: 42px;
+			height: 42px;
+			left: 0;
+			top: -75px;
+			transform: rotate(55deg);
+		}
+		&::after {
+			background-image: url('../img/icon/circle.png');
+			width: 65px;
+			height: 65px;
+			right: 0;
+			bottom: -20px;
+			transform: rotate(-20deg);
+			@include respond-to(tab-port) {
+				bottom: -60px;
+			}
+			@include respond-to(tab-port-small) {
+				bottom: 0;
+			}
+			@include respond-to(phone) {
+				bottom: -55px;
+			}
+			@media only screen and (max-width: 587px) {
+				bottom: 0;
+			}
+		}
+	}
+}
+.portfolio__wrap {
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		background-image: url('../img/icon/spiral.png');
+		background-repeat: no-repeat;
+		width: 100px;
+		height: 40px;
+		left: 0;
+		bottom: -80px;
+		@include respond-to(tab-port) {
+			bottom: -65px;
+		}
+	}
+}
+.portfolio__slider {
+	.swiper-pagination-bullet {
+		background-color: var(--dark-black);
+		opacity: 1;
+		transition: all 0.3s ease-in-out;
+		@include respond-to(tab-port-small) {
+			display: none;
+		}
+	}
+	.swiper-pagination-bullet-active {
+		background-color: var(--blue);
+		width: 16px;
+		border-radius: 8px;
+		transform: scaleX(1.1);
+		transition: all 0.3s ease-in-out;
+	}
+	.swiper-button-prev,
+	.swiper-button-next {
+		display: none;
+		@include respond-to(tab-port-small) {
+			display: flex;
+			top: 94%;
+			background-color: var(--blue);
+			width: 37px;
+			height: 37px;
+			padding: 5px;
+			border-radius: 50%;
+		}
+		&.swiper-button-disabled {
+			background-color: var(--gray);
+			opacity: 1;
+		}
+		&:after {
+			font-size: 14px;
+			color: var(--white);
+		}
+	}
+	.swiper-button-prev {
+		left: 38%;
+	}
+	.swiper-button-next {
+		right: 38%;
+	}
+}
+.portfolio__slider-wrapper {
+	margin-bottom: 50px;
+}
+.portfolio__slide {
+	display: flex;
+	gap: 24px;
+	align-items: flex-start;
+	justify-content: center;
+}
+.portfolio__slide-content {
+	background-color: var(--dark-gray);
+	border-radius: 25px;
+	padding: 25px;
+	position: relative;
+	cursor: pointer;
+	img {
+		border-radius: 15px;
+	}
+	margin-top: calc(60px * var(--index));
+}
+
+// section__contact///////////////////////////////////////////////////
+.section__contact {
+	padding: 185px 0;
+	background-color: var(--light-black);
+	@include respond-to(tab-port) {
+		padding: 100px 0;
+	}
+}
+.contact__wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	gap: 25px;
+	@include respond-to(tab-port-small) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		background-repeat: no-repeat;
+	}
+	&::before {
+		background-image: url('../img/icon/plus.png');
+		width: 42px;
+		height: 42px;
+		right: 10;
+		top: -100px;
+		@include respond-to(tab-port) {
+			top: -70px;
+		}
+	}
+	&::after {
+		background-image: url('../img/icon/circle.png');
+		width: 65px;
+		height: 65px;
+		left: 40;
+		bottom: -115px;
+		@include respond-to(tab-port) {
+			bottom: -85px;
+		}
+		@include respond-to(tab-port-small) {
+			left: 0;
+		}
+	}
+	h2 {
+		max-width: 830px;
+		text-transform: inherit;
+	}
+	.btn-primary {
+		text-transform: inherit;
+	}
+}

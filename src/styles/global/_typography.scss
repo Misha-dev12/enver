@@ -1,0 +1,56 @@
+body {
+	font-family: var(--main-font-family);
+	font-style: normal;
+}
+h1 {
+	font-family: 'Graphick';
+	font-weight: 700;
+	font-size: 80px;
+	line-height: 84px;
+	text-transform: capitalize;
+	color: var(--white);
+	@include respond-to(tab-port) {
+		font-size: 60px;
+		line-height: 75px;
+	}
+	@include respond-to(phone) {
+		font-size: 55px;
+	}
+	@include respond-to(phone-small) {
+		font-size: 42px;
+	}
+}
+h2 {
+	font-family: 'Graphick';
+	font-weight: 700;
+	font-size: 60px;
+	line-height: 70px;
+	text-transform: capitalize;
+	color: var(--white);
+	@include respond-to(phone) {
+		font-size: 45px;
+	}
+	@include respond-to(phone-small) {
+		font-size: 36px;
+	}
+}
+h3 {
+	font-weight: 600;
+	font-size: 28px;
+	text-transform: capitalize;
+	color: var(--white);
+}
+p {
+	font-weight: 400;
+	font-size: 21px;
+	line-height: 39px;
+	letter-spacing: -0.66px;
+	color: var(--gray);
+}
+a {
+	color: var(--white);
+	transition: 0.3s;
+	&:hover {
+		color: var(--blue);
+	}
+}
