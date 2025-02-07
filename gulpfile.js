@@ -69,7 +69,7 @@ const styles = function () {
 			.pipe(sourcemaps.init())
 			.pipe(sass().on('error', sass.logError))
 			.pipe(prefixer())
-			// .pipe(cssnano())
+			.pipe(cssnano({ zindex: false }))
 			.pipe(rename({ suffix: '.min' }))
 			.pipe(sourcemaps.write('.'))
 			.pipe(dest(path.build.css))
